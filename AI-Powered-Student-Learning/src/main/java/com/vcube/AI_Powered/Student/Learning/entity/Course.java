@@ -1,10 +1,7 @@
 package com.vcube.AI_Powered.Student.Learning.entity;
 
-
-
-import java.time.LocalDateTime;
-
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "courses")
@@ -14,47 +11,28 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "domain_id", nullable = false)
+    private Domain domain;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "trainer_id", nullable = false)
+    private User trainer;
+
     @Column(nullable = false, length = 150)
     private String title;
 
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    // Many courses can belong to one career role
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "career_role_id", nullable = false)
-    private CareerRole careerRole;
+    @Column(length = 30)
+    private String level;
 
-    // One trainer can create many courses
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "trainer_id", nullable = false)
-    private User trainer;
+    @Column(name = "created_at")
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-    @Column(length = 50)
-    private String difficultyLevel;
-
-    private Integer durationHours;
-
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
-
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-        updatedAt = LocalDateTime.now();
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        updatedAt = LocalDateTime.now();
-    }
-
-    // Default constructor
     public Course() {
     }
-
-    // Getters and Setters
 
     public Long getId() {
         return id;
@@ -62,6 +40,22 @@ public class Course {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Domain getDomain() {
+        return domain;
+    }
+
+    public void setDomain(Domain domain) {
+        this.domain = domain;
+    }
+
+    public User getTrainer() {
+        return trainer;
+    }
+
+    public void setTrainer(User trainer) {
+        this.trainer = trainer;
     }
 
     public String getTitle() {
@@ -80,43 +74,19 @@ public class Course {
         this.description = description;
     }
 
-    public CareerRole getCareerRole() {
-        return careerRole;
+    public String getLevel() {
+        return level;
     }
 
-    public void setCareerRole(CareerRole careerRole) {
-        this.careerRole = careerRole;
-    }
-
-    public User getTrainer() {
-        return trainer;
-    }
-
-    public void setTrainer(User trainer) {
-        this.trainer = trainer;
-    }
-
-    public String getDifficultyLevel() {
-        return difficultyLevel;
-    }
-
-    public void setDifficultyLevel(String difficultyLevel) {
-        this.difficultyLevel = difficultyLevel;
-    }
-
-    public Integer getDurationHours() {
-        return durationHours;
-    }
-
-    public void setDurationHours(Integer durationHours) {
-        this.durationHours = durationHours;
+    public void setLevel(String level) {
+        this.level = level;
     }
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }
