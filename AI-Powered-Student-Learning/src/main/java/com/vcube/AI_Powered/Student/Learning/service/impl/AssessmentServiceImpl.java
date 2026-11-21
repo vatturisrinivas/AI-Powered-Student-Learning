@@ -57,4 +57,11 @@ public class AssessmentServiceImpl implements AssessmentService {
         Assessment existingAssessment = getAssessmentById(id);
         assessmentRepository.delete(existingAssessment);
     }
+
+	@Override
+	public List<Assessment> findByCourse_Id(Long courseId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+    
 }

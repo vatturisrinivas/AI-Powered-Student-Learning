@@ -1,8 +1,8 @@
 package com.vcube.AI_Powered.Student.Learning.service;
 
-import java.util.List;
-
 import com.vcube.AI_Powered.Student.Learning.entity.Assessment;
+
+import java.util.List;
 
 public interface AssessmentService {
 
@@ -12,9 +12,11 @@ public interface AssessmentService {
 
     List<Assessment> getAllAssessments();
 
-    List<Assessment> getAssessmentsByCourseId(Long courseId);
+    List<Assessment> findByCourse_Id(Long courseId);
 
-    Assessment updateAssessment(Long id, Assessment assessment);
+    Assessment updateAssessment(Long id, Assessment updatedAssessment);
 
     void deleteAssessment(Long id);
+
+	List<Assessment> getAssessmentsByCourseId(Long courseId);
 }
