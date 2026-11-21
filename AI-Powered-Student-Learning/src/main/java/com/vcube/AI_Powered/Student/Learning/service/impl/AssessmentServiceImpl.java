@@ -37,7 +37,7 @@ public class AssessmentServiceImpl implements AssessmentService {
 
     @Override
     public List<Assessment> getAssessmentsByCourseId(Long courseId) {
-        return assessmentRepository.findByCourse_Id(courseId);
+        return assessmentRepository.findByCourseId(courseId);
     }
 
     @Override
