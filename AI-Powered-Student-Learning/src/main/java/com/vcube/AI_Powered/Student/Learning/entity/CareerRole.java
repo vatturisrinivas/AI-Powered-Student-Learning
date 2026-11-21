@@ -1,10 +1,7 @@
 package com.vcube.AI_Powered.Student.Learning.entity;
 
-
-
-import java.time.LocalDateTime;
-
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "career_roles")
@@ -14,7 +11,6 @@ public class CareerRole {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Many career roles belong to one domain
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "domain_id", nullable = false)
     private Domain domain;
@@ -25,21 +21,11 @@ public class CareerRole {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "required_skills", columnDefinition = "TEXT")
     private String requiredSkills;
 
-    private LocalDateTime createdAt;
-
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-    }
-
-    // Default constructor
     public CareerRole() {
     }
-
-    // Getters and Setters
 
     public Long getId() {
         return id;
@@ -79,9 +65,5 @@ public class CareerRole {
 
     public void setRequiredSkills(String requiredSkills) {
         this.requiredSkills = requiredSkills;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
     }
 }
