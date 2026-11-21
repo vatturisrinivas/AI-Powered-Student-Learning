@@ -1,8 +1,6 @@
 package com.vcube.AI_Powered.Student.Learning.entity;
 
 
-
-
 import java.time.LocalDateTime;
 
 import jakarta.persistence.*;
