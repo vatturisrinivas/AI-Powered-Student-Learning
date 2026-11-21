@@ -1,4 +1,4 @@
-# AI-Powered-Student-Learning
+# SkillForge AI
 
 **AI-Powered Student Learning & Placement Preparation Platform**  
 **VCUBE Hack Quest 1.0 · Problem 4 (EdTech) · 21 November 2026**
@@ -271,11 +271,9 @@ Authorization: Bearer <JWT_FROM_LOGIN>
 
 ## Team and links
 
-- **Team name:** ADD_TEAM_NAME
-- **Team members:** ADD_MEMBERS
-- **Repository:** ADD_GITHUB_URL
-- **Frontend deployment:** ADD_FRONTEND_URL
-- **Backend deployment:** ADD_BACKEND_URL
+- **Team name:** Garbage Collectors
+- **Team members:** SRINIVAS, SANTHOSH, BHARGAV, LAXMI LASYA, SIRISHA
+
 
 ---
 
