@@ -1,14 +1,13 @@
-
 package com.vcube.AI_Powered.Student.Learning.service;
-
-import java.util.List;
 
 import com.vcube.AI_Powered.Student.Learning.entity.User;
 import com.vcube.AI_Powered.Student.Learning.entity.UserRole;
 
+import java.util.List;
+
 public interface UserService {
 
-    User registerUser(User user);
+    User createUser(User user);
 
     User getUserById(Long id);
 
@@ -16,8 +15,9 @@ public interface UserService {
 
     List<User> getAllUsers();
 
-    User updateUser(Long id, User user);
+    List<User> getUsersByRole(UserRole role);
+
+    User updateUser(Long id, User updatedUser);
 
     void deleteUser(Long id);
-
 }
