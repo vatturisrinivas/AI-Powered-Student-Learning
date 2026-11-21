@@ -2,6 +2,7 @@ package com.vcube.AI_Powered.Student.Learning.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.vcube.AI_Powered.Student.Learning.entity.Assessment;
@@ -11,6 +12,7 @@ import com.vcube.AI_Powered.Student.Learning.service.AssessmentService;
 @Service
 public class AssessmentServiceImpl implements AssessmentService {
 
+	@Autowired
     private final AssessmentRepository assessmentRepository;
 
     public AssessmentServiceImpl(AssessmentRepository assessmentRepository) {

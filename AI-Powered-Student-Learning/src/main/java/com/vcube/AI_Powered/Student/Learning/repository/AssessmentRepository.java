@@ -1,12 +1,5 @@
 package com.vcube.AI_Powered.Student.Learning.repository;
 
-import java.util.List;
+public interface AssessmentRepository {
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.vcube.AI_Powered.Student.Learning.entity.Assessment;
-
-public interface AssessmentRepository extends JpaRepository<Assessment, Long> {
-
-    List<Assessment> findByCourse_Id(Long courseId);
 }

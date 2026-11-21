@@ -1,4 +1,4 @@
-
+package com.vcube.AI_Powered.Student.Learning.Controller;
 
 import com.vcube.AI_Powered.Student.Learning.dto.*;
 import com.vcube.AI_Powered.Student.Learning.service.AuthService;
