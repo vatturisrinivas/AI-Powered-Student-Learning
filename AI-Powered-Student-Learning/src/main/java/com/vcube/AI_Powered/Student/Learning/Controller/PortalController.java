@@ -451,10 +451,11 @@ public class PortalController {
 			return result;
 		} catch (org.springframework.web.client.RestClientResponseException ex) {
 
-			System.err.println("Gemini API failed with HTTP status: " + ex.getStatusCode().value());
+			System.err.println("Gemini API HTTP Status: " + ex.getStatusCode().value());
 
-			throw new ResponseStatusException(HttpStatus.BAD_GATEWAY,
-					"Gemini API failed (HTTP " + ex.getStatusCode().value() + ")", ex);
+			System.err.println("Gemini API Error Response: " + ex.getResponseBodyAsString());
+
+			throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Gemini API request failed");
 		} catch (Exception ex) {
 			throw new ResponseStatusException(HttpStatus.BAD_GATEWAY,
 					"Gemini interview unavailable. Check backend logs and Gemini configuration.");
