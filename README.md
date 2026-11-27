@@ -272,7 +272,7 @@ Authorization: Bearer <JWT_FROM_LOGIN>
 ## Team and links
 
 - **Team name:** Garbage Collectors
-- **Team members:** SRINIVAS, SANTHOSH, BHARGAV, LAXMI LASYA, SIRISHA
+- **Team members:** SRINIVAS, SANTHOSH, BHARGAV, LAXMI LASYA, SIRISHA.
 
 
 ---
